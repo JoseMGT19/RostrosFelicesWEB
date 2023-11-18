@@ -51,7 +51,7 @@ namespace RostrosFelicesWEB.Pages.Clientes
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoryExists(Clientes.Id))
+                if (!ClientesExists(Clientes.Id))
                 {
                     return NotFound();
                 }
@@ -65,7 +65,7 @@ namespace RostrosFelicesWEB.Pages.Clientes
 
         }
 
-        private bool CategoryExists(int id)
+        private bool ClientesExists(int id)
         {
             return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
         }
