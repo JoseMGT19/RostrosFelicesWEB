@@ -26,11 +26,11 @@ namespace RostrosFelicesWEB.Pages.Clientes
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
+            var cliente = await _context.Clientes.FindAsync(id);
 
-            if (cliente == null)
+            if (cliente != null)
             {
-                Clientes = Clientes;
+                Clientes = cliente;
                 _context.Clientes.Remove(Clientes);
                 await _context.SaveChangesAsync();
             }
