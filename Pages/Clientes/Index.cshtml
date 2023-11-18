@@ -1,0 +1,29 @@
+﻿@page
+@model RostrosFelicesWEB.Pages.Clientes.IndexModel
+@{
+    ViewData["Title"] = "Index Clientes";
+}
+<h1>Index Clientes</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Clientes[0].Name)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Clientes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <span></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
