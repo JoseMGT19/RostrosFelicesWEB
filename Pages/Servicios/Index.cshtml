@@ -1,0 +1,26 @@
+﻿@page
+@model RostrosFelicesWEB.Pages.Servicios.IndexModel
+@{
+    ViewData["Title"] = "Servicios";
+}
+<h1>Servicios Realizados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Empleado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var servicio in Model.Servicios)
+        {
+                <tr>
+                    <td>@servicio.Fecha</td>
+                    <td>@servicio.Clientes.Id</td>
+                    <td>@servicio.Empleados.Nombre</td>
+                </tr>
+        }
+    </tbody>
+</table>

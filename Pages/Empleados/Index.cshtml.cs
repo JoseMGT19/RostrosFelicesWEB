@@ -17,12 +17,12 @@ namespace RostrosFelicesWEB.Pages.Empleados
 
         public IList<Empleado> Empleados { get; set; } = default!;
 
-        public async Task OnGetAsync()
-        {
-            if (_context.Empleados != null)
-            {
-                Empleados = await _context.Empleados.ToListAsync();
-            }
-        }
-    }
+		public async Task OnGetAsync()
+		{
+			if (_context.Empleados != null)
+			{
+				Empleados = await _context.Empleados.ToListAsync();
+			}
+		}
+	}
 }
