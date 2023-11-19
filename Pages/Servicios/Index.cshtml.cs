@@ -20,8 +20,8 @@ namespace RostrosFelicesWEB.Pages.Servicios
         public void OnGet()
         {
             Servicios = _context.Servicios
-                .Include(s => s.Clientes)
-                .Include(s => s.Empleados)
+                .Include(s => s.Cliente)
+                .Include(s => s.Empleado)
                 .ToList();
         }
     }

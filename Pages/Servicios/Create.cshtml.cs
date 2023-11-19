@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using RostrosFelicesWEB.Data;
 using RostrosFelicesWEB.Models;
 
-namespace RostrosFelicesWEB.Pages.Clientes
+namespace RostrosFelicesWEB.Pages.Servicios
 {
     public class CreateModel : PageModel
     {
-       private readonly RostrosFelicesContext _context;
+        private readonly RostrosFelicesContext _context;
 
         public CreateModel(RostrosFelicesContext context)
         {
@@ -20,20 +20,17 @@ namespace RostrosFelicesWEB.Pages.Clientes
             return Page();
         }
 
-       
-
-
         [BindProperty]
 
-        public Cliente Clientes { get; set; } = default!;
+        public Servicio Servicios { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if(!ModelState.IsValid || _context.Clientes == null || Clientes== null) 
+            if (!ModelState.IsValid || _context.Servicios == null || Servicios == null)
             {
                 return Page();
             }
-            _context.Clientes.Add(Clientes);
+            _context.Servicios.Add(Servicios);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

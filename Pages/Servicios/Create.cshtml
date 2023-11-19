@@ -1,0 +1,58 @@
+﻿@page
+@model RostrosFelicesWEB.Pages.Servicios.CreateModel
+@{
+	ViewData["Title"] = "Create";
+}
+<h1>Create</h1>
+
+<h4>Services</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Servicios.Fecha" class="control-label"></label>
+                <input type="date" id="fecha" asp-for="Servicios.Fecha" class="form-control" disabled/>
+                <script>
+                    // Obtén el elemento input por su id
+                    var inputFecha = document.getElementById('fecha');
+
+                    // Obtén la fecha actual en el formato YYYY-MM-DD
+                    var fechaActual = new Date().toISOString().split('T')[0];
+
+                    // Establece la fecha actual como el valor predeterminado del input
+                    inputFecha.value = fechaActual;
+                </script>
+                <span asp-validation-for="Servicios.Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Servicios.EmpleadoId" class="control-label"></label>
+                <input asp-for="Servicios.EmpleadoId" class="form-control" />
+                <span asp-validation-for="Servicios.EmpleadoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Servicios.Empleado" class="control-label"></label>
+                <input asp-for="Servicios.Empleado" class="form-control" />
+                <span asp-validation-for="Servicios.Empleado" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Servicios.ClienteId" class="control-label"></label>
+                    <input id="clienteId" asp-for="Servicios.ClienteId" class="form-control" />
+                    <span asp-validation-for="Servicios.ClienteId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col">
+                <label asp-for="Servicios.Cliente" class="control-label"></label>
+                <input id="clienteName" asp-for="Servicios.Cliente" class="form-control" />
+                <span asp-validation-for="Servicios.Cliente" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -4,7 +4,9 @@
     ViewData["Title"] = "Servicios";
 }
 <h1>Servicios Realizados</h1>
-
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -18,8 +20,8 @@
         {
                 <tr>
                     <td>@servicio.Fecha</td>
-                    <td>@servicio.Clientes.Id</td>
-                    <td>@servicio.Empleados.Nombre</td>
+                    <td>@servicio.Cliente.Id</td>
+                    <td>@servicio.Empleado.Nombre</td>
                 </tr>
         }
     </tbody>
