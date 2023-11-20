@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,8 +7,10 @@ using RostrosFelicesWEB.Models;
 
 namespace RostrosFelicesWEB.Pages.Empleados
 {
-    public class IndexModel : PageModel
+	[Authorize]
+	public class IndexModel : PageModel
     {
+
         public readonly RostrosFelicesContext _context;
 
         public IndexModel(RostrosFelicesContext context)
